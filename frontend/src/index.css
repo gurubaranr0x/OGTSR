@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f4f5;
+    --bg-tertiary: #e4e4e7;
+    --bg-elevated: #ffffff;
+    --border-subtle: #e4e4e7;
+    --border-strong: #d4d4d8;
+    --text-primary: #09090b;
+    --text-secondary: #52525b;
+    --text-muted: #a1a1aa;
+    --accent: #18181b;
+    --accent-contrast: #ffffff;
+    --accent-muted: #f4f4f5;
+    --accent-hover: #27272a;
+    --code-bg: #f4f4f5;
+  }
+
+  .dark {
+    /* Pure, deep monochrome black & neutral carbon/zinc */
+    --bg-primary: #000000;
+    --bg-secondary: #09090b;
+    --bg-tertiary: #141416;
+    --bg-elevated: #18181b;
+    --border-subtle: #27272a;
+    --border-strong: #3f3f46;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --accent: #ffffff;
+    --accent-contrast: #000000;
+    --accent-muted: #27272a;
+    --accent-hover: #e4e4e7;
+    --code-bg: #09090b;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", sans-serif;
+    letter-spacing: -0.012em;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  code, pre, .font-mono {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Smooth, curved micro-interactions */
+.btn-curved {
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-curved {
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel-curved {
+  border-radius: 1.25rem;
+}
+
+/* Subtle, smooth hover scale for tactile buttons */
+.interactive-hover {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.interactive-hover:hover {
+  transform: translateY(-1px);
+}
+.interactive-hover:active {
+  transform: translateY(0.5px) scale(0.985);
+}
+
+/* Smooth scroll behavior */
+html, body, main {
+  scroll-behavior: smooth;
+}
+
+/* Elegant, non-overdone scroll-reveal animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll reveal utility for progressive viewing */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle stagger delays */
+.delay-100 { transition-delay: 40ms; }
+.delay-200 { transition-delay: 80ms; }
+.delay-300 { transition-delay: 120ms; }
+.delay-400 { transition-delay: 160ms; }
+.delay-500 { transition-delay: 200ms; }
+
+/* Obsidian glass card system */
+.card-obsidian {
+  background: rgba(10, 10, 12, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.card-obsidian:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+

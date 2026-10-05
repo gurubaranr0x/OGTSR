@@ -1,0 +1,11 @@
+{
+  "name": "ogtsr-workspace",
+  "version": "0.2.0-research",
+  "description": "OGTSR — Optical-Guided Thermal Super-Resolution Research System",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview"
+  }
+}
