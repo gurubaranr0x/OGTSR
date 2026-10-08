@@ -1,4 +1,4 @@
-# OGTSR — Optical-Guided Thermal Super-Resolution
+# Optyne
 
 ### Remote-Sensing Research System for Sub-Pixel Thermal Spatial Reconstruction
 
